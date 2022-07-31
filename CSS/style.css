@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -11,6 +12,7 @@
 button,textarea{
     border: 0;
     outline: 0;
+    resize: none;
 }
 
 .note-app{
@@ -52,7 +54,6 @@ padding: 0 20px;
 .list-item textarea{
     width: 100%;
     height: calc(100% - 30px);
-    resize: none;
     padding: 10px;
     font-size: 1rem;
 }
@@ -66,26 +67,46 @@ padding: 0 20px;
 
 /* input pop  */
 .pop-up{
-    position: absolute;
-    width: 400px;
-    height: 300px;
-    top: 20%;
-    left: 20%;
-    border-radius: 10px;
-    transform: translateX(50%);
-    background: black;
-    z-index: -99;
-    opacity: 0;
-    pointer-events: none;
-    transition: all .2s ease;
+   position: absolute; 
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background: rgba(0, 0, 0, 0.322);
+   opacity: 0;
+   pointer-events: none;
+   transition: all .3s ease;
 }
 .pop-up.open{
-    z-index: 99;
     opacity: 1;
-    pointer-events: auto;
+   pointer-events: auto;
 }
-.pop-up .list-item{
+.pop-up .note-input{
+    max-width: 500px;
     width: 100%;
-    height: 100%;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
 }
+.note-input .top-bar{
+    padding: 5px 18px;
+    background-color: #edebeb;
+}
+.note-input .top-bar i{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.note-input .top-bar i.fa-xmark{
+    margin-left: 10px;
+    color: red;
+}
+.note-input textarea{
+    width: 100%;
+    font: 1.2rem;
+    padding: 5px 18px;
+    height: 250px;
+    
+}
+
+
 
